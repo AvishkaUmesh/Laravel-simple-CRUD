@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\products;
 
 class HomeController extends Controller
 {
@@ -47,9 +47,7 @@ class HomeController extends Controller
         $data['image'] = $filename;
 
 
-
-
-        DB::table('products')->insert($data);
+        products::create($data);
 
         $notification = array(
             'message' => 'Product Added Successfully',
@@ -60,17 +58,20 @@ class HomeController extends Controller
     }
 
     public function allProducts(){
-        $products = DB::table('products')->paginate(20);
+        // $products = DB::table('products')->paginate(20);
+        $products = products::all();
 
         return view('backend.products', compact('products'));
     }
 
     public function deleteProduct($id)
     {
-        $product = DB::table('products')->where('id', $id)->first();
+        $product = products::where('id', $id)->first();
         unlink('public/productImages/' . $product->image);
 
-        DB::table('products')->where('id', $id)->delete();
+        $product = products::find($id);
+        $product->delete();
+
 
         $notification = array(
             'message' => 'Product Deleted Successfully',
@@ -81,7 +82,7 @@ class HomeController extends Controller
     }
 
     public function editProduct($id){
-        $product = DB::table('products')->where('id', $id)->first();
+        $product = products::where('id', $id)->first();
 
         return view('backend.editProduct', compact('product'));
     }
@@ -109,7 +110,7 @@ class HomeController extends Controller
             $data['image'] = $request->oldimage;
         }
 
-        DB::table('products')->where('id', $id)->update($data);
+        products::where('id',$id)->update($data);
 
         $notification = array(
             'message' => 'Product Updated Successfully',

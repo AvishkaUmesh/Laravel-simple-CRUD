@@ -62,10 +62,10 @@
                             <div class="col-md-10">
                                 <select class="form-control select2" name="status" required>
 
-                                    <option value="1" @if($product->status ==1)
+                                    <option value="1" @if($product->status == 1)
                                         selected
                                     @endif>Active</option>
-                                    <option value="0"  @if($product->status == 0)
+                                    <option value="2"  @if($product->status == 0)
                                         selected
                                     @endif>Inactive</option>
 

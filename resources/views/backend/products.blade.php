@@ -57,7 +57,7 @@
                             </tbody>
                         </table>
                     </div>
-                     <p style="float:right;"> {{ $products->links() }}</p>
+                     {{-- <p style="float:right;"> {{ $products->links() }}</p> --}}
                 </div>
             </div>
 

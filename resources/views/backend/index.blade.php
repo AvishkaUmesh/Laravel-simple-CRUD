@@ -3,7 +3,8 @@
 @section('content')
 
 @php
-    $products = DB::table('products')->where('status', 1)->paginate(20);
+use App\Models\products;
+    $products = products::where('status', 1)->get();
 @endphp
 
 <h1>Welcome back {{auth::user()->name}}</h1><br><br>
@@ -12,7 +13,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card-box">
-            <h3 class="m-t-0 text-center"><b> ALL ACTIVE Products</b></h3><br>
+            <h3 class="m-t-0 text-center"><b> ALL ACTIVE PRODUCTS</b></h3><br>
             <div class="row m-t-10 m-b-10">
 
 
@@ -56,7 +57,6 @@
                             </tbody>
                         </table>
                     </div>
-                     <p style="float:right;"> {{ $products->links() }}</p>
                 </div>
             </div>
 
