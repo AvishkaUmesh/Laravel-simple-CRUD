@@ -66,10 +66,10 @@ class HomeController extends Controller
 
     public function deleteProduct($id)
     {
-        $product = products::where('id', $id)->first();
+        // $product = products::where('id', $id)->first();
+        $product = products::find($id);
         unlink('public/productImages/' . $product->image);
 
-        $product = products::find($id);
         $product->delete();
 
 
@@ -82,7 +82,7 @@ class HomeController extends Controller
     }
 
     public function editProduct($id){
-        $product = products::where('id', $id)->first();
+        $product = products::find($id);
 
         return view('backend.editProduct', compact('product'));
     }
