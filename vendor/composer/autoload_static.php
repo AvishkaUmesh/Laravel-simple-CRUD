@@ -44,6 +44,10 @@ class ComposerStaticInit9b064379bc6cf897ee41272fafea4bfd
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'd' => 
+        array (
+            'domain\\' => 7,
+        ),
         'W' => 
         array (
             'Whoops\\' => 7,
@@ -195,6 +199,10 @@ class ComposerStaticInit9b064379bc6cf897ee41272fafea4bfd
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'domain\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/domain',
         ),
         'Whoops\\' => 
         array (
@@ -6085,6 +6093,8 @@ class ComposerStaticInit9b064379bc6cf897ee41272fafea4bfd
         'Whoops\\Util\\Misc' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/Misc.php',
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+        'domain\\Facades\\ProductFacade' => __DIR__ . '/../..' . '/domain/Facades/ProductFacade.php',
+        'domain\\Services\\ProductService' => __DIR__ . '/../..' . '/domain/Services/ProductService.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
