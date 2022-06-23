@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 23, 2022 at 05:06 AM
+-- Generation Time: Jun 23, 2022 at 06:20 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -110,9 +110,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `image`, `price`, `status`) VALUES
-(3, 'Camera', '1655923878.jpg', 2000, 1),
-(4, 'laptop', '1655923905.jpeg', 25000, 2),
-(5, 'Mouse', '1655923926.jpeg', 1200, 2),
+(3, 'Camera', '1655923878.jpg', 20000, 1),
+(4, 'laptop', '1655923905.jpeg', 25000, 0),
+(5, 'Mouse', '1655923926.jpeg', 1200, 1),
 (6, 'Headphone', '1655923949.jpeg', 3400, 1);
 
 -- --------------------------------------------------------
@@ -135,9 +135,10 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('JRKNwISnOvaQH6J2HrnkrbLWbOKA8292zAAodpv9', 1, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiS1dZTmNaMGpyM1d5UnlwMDRybDRqd3l6RVd0SGE4OWhjV1UyellOZCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3QvaW50ZXJuL2Rhc2hib2FyZCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czo0OiJhdXRoIjthOjE6e3M6MjE6InBhc3N3b3JkX2NvbmZpcm1lZF9hdCI7aToxNjU1OTE4OTYwO31zOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCQ4R1pEVnRwVWNaeVNJb0toL2hrM1EuMVl3WDdzNWdkdTY4TENYLnRkbTNnODlhVlUvZzR2ZSI7fQ==', 1655919414),
-('pBe9lUFcq2pjCL5kpHrHml5FdhPvVyYPEcIZoHNO', 1, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiYkhZNUhpVlZwaXpXM3ZNVks1NDRoRXBhYzVPcHZPeUZPVXZYeGtsSSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3QvaW50ZXJuL2FsbC1wcm9kdWN0cyI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czo0OiJhdXRoIjthOjE6e3M6MjE6InBhc3N3b3JkX2NvbmZpcm1lZF9hdCI7aToxNjU1OTUyNDM5O31zOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCQ4R1pEVnRwVWNaeVNJb0toL2hrM1EuMVl3WDdzNWdkdTY4TENYLnRkbTNnODlhVlUvZzR2ZSI7fQ==', 1655952634),
-('R7yARrsu8DzgBRuSzd78YmjtsSVQWQNfcdMM0bB7', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVDBUVHg4SnlPbzFydzN0cHdSaURrNkw4NTRPblhaUWhqV3FFeFBRaCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly9sb2NhbGhvc3QvaW50ZXJuL2xvZ2luIjt9fQ==', 1655924993);
+('1pmXbtJ6eeQqVaWy2aeBonQZC5OWR3uClolRYB1B', 1, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiYlNyOEVKZ0Z5WDZPUEdGVHhrRW1XYnhuQkY4WHpyVTZ3aFlqa2ZmSyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDY6Imh0dHA6Ly9sb2NhbGhvc3QvaW50ZXJuLWxhcmF2ZWwvcHJvZHVjdC9lZGl0LzQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTY1NTk1NzMyOTt9czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkOEdaRFZ0cFVjWnlTSW9LaC9oazNRLjFZd1g3czVnZHU2OExDWC50ZG0zZzg5YVZVL2c0dmUiO30=', 1655957359),
+('B5HVV1BkjIlDKr0GR9GSthbAbDITuNLNwlRVnJuU', 1, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiMWhWdjMzaWczYzZMZXVzRXlxc0dhdGdMVFdJQ0pGcXl3SE5NdVdibyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDQ6Imh0dHA6Ly9sb2NhbGhvc3QvaW50ZXJuLWxhcmF2ZWwvYWxsLXByb2R1Y3RzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjQ6ImF1dGgiO2E6MTp7czoyMToicGFzc3dvcmRfY29uZmlybWVkX2F0IjtpOjE2NTU5NTYyMzQ7fXM6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJDhHWkRWdHBVY1p5U0lvS2gvaGszUS4xWXdYN3M1Z2R1NjhMQ1gudGRtM2c4OWFWVS9nNHZlIjt9', 1655956795),
+('HXfJOgyY1Rcfn7Lp1g2mbpWrpB9kOJj7rVZpLC4s', 1, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiUVdGRm05bEpTeTg1NEpGSjVJQUZkYU5QTWk1MzVVNE5QNWpWcHVOZyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDY6Imh0dHA6Ly9sb2NhbGhvc3QvaW50ZXJuLWxhcmF2ZWwvcHJvZHVjdC9lZGl0LzQiO31zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjQ6ImF1dGgiO2E6MTp7czoyMToicGFzc3dvcmRfY29uZmlybWVkX2F0IjtpOjE2NTU5NTc0MTc7fXM6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJDhHWkRWdHBVY1p5U0lvS2gvaGszUS4xWXdYN3M1Z2R1NjhMQ1gudGRtM2c4OWFWVS9nNHZlIjt9', 1655957981),
+('LzwEiVllmr0mSON8rFy2A4iqrjYGCgxnJ7q3T8V0', NULL, '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiblpGeWdOclNRajU1V1dmMFlnRFRJeVB6ZGR4bWFyb1YwOVl3ejN2UyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3QvaW50ZXJuLWxhcmF2ZWwiO319', 1655957211);
 
 -- --------------------------------------------------------
 
@@ -246,7 +247,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
