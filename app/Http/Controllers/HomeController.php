@@ -12,9 +12,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    protected $product;
+    public function __construct(products $product)
     {
         $this->middleware('auth');
+        $this->product = new products();
     }
 
     /**
@@ -23,7 +25,8 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function addProduct(){
+    public function addProduct()
+    {
         return view('backend.add-product');
     }
 
@@ -46,8 +49,7 @@ class HomeController extends Controller
         $path = $request->file('image')->move(public_path() . '/productImages/', $filename);
         $data['image'] = $filename;
 
-
-        products::create($data);
+        $this->product->create($data);
 
         $notification = array(
             'message' => 'Product Added Successfully',
@@ -57,17 +59,16 @@ class HomeController extends Controller
         return redirect()->route('add-product')->with($notification);
     }
 
-    public function allProducts(){
-        // $products = DB::table('products')->paginate(20);
-        $products = products::all();
+    public function allProducts()
+    {
+        $response['products'] = $this->product->all();
 
-        return view('backend.products', compact('products'));
+        return view('backend.products',)->with($response);
     }
 
     public function deleteProduct($id)
     {
-        // $product = products::where('id', $id)->first();
-        $product = products::find($id);
+        $product = $this->product->find($id);
         unlink('public/productImages/' . $product->image);
 
         $product->delete();
@@ -81,13 +82,15 @@ class HomeController extends Controller
         return redirect()->route('all-products')->with($notification);
     }
 
-    public function editProduct($id){
-        $product = products::find($id);
+    public function editProduct($id)
+    {
+        $response['product'] = $this->product->find($id);
 
-        return view('backend.editProduct', compact('product'));
+        return view('backend.editProduct')->with($response);
     }
 
-    public function storeEditProduct(Request $request, $id){
+    public function storeEditProduct(Request $request, $id)
+    {
         $validateData = $request->validate([
             'name' => ['required'],
             'price' => ['required'],
@@ -110,7 +113,9 @@ class HomeController extends Controller
             $data['image'] = $request->oldimage;
         }
 
-        products::where('id',$id)->update($data);
+        $product = $this->product->find($id);
+        $product->update($data);
+
 
         $notification = array(
             'message' => 'Product Updated Successfully',
@@ -119,6 +124,4 @@ class HomeController extends Controller
 
         return redirect()->route('all-products')->with($notification);
     }
-
-
 }
