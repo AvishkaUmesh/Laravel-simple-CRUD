@@ -80,7 +80,8 @@
 
 
 
-                            <button type="submit" class="btn waves-effect waves-light btn-primary"style="float: right;">Update Product</button>
+                        <button type="submit" class="btn waves-effect waves-light btn-primary"style="float: right; margin-left: 5px;">Update Product</button>
+                        <a href="{{route('all-products')}}" class="btn waves-effect waves-light btn-primary"style="float: right;">Cancel </a>
 
                     </form>
                 </div>
